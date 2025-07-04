@@ -27,7 +27,7 @@ body{
   height: 800px;
 }
 
-.service-container{
+.portfolio-container{
   display: flex;
   width: 100vw;
   height: 800px;
@@ -39,7 +39,7 @@ body{
   height: 800px;
 }
 
-.portfolio-container{
+.service-container{
   display: flex;
   width: 100vw;
   height: 800px;
