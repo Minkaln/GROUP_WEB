@@ -1,0 +1,63 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0px;
+  background-color: #2A0042;
+  color: white;
+}
+.header-container{
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 85px;
+  z-index: 1;
+}
+
+.home-container{
+  display: flex;
+  padding-top: 90px;
+  width: 100vw;
+  height: 800px;
+}
+
+.about-me-container{
+  display: flex;
+  width: 100vw;
+  height: 800px;
+}
+
+.service-container{
+  display: flex;
+  width: 100vw;
+  height: 800px;
+}
+
+.skills-container{
+  display: flex;
+  width: 100vw;
+  height: 800px;
+}
+
+.portfolio-container{
+  display: flex;
+  width: 100vw;
+  height: 800px;
+}
+
+.contact-container{
+  display: flex;
+  width: 100vw;
+  height: 800px;
+}
+
+div.header-container,.about-me-container,.skills-container,.contact-container{
+    background-color: #090042;
+}
+
+
+footer{
+  display: flex;
+  width: 100vw;
+  height: 100px;
+}
