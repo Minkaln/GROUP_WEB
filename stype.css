@@ -1,14 +1,15 @@
 *{
   box-sizing: border-box;
+  color: white;
 }
 body{
   margin: 0px;
   background-color: #2A0042;
-  color: white;
 }
 .header-container{
   display: flex;
   position: fixed;
+  flex-direction: row;
   width: 100vw;
   height: 85px;
   z-index: 1;
@@ -50,6 +51,42 @@ body{
   width: 100vw;
   height: 800px;
 }
+
+.logo-name{
+  display: flex;
+  flex: 1;
+}
+
+nav{
+  display: flex;
+  flex: 2;
+  justify-content: center;
+}
+ul{
+  list-style: none;
+  padding: 0;
+  align-self: center;
+}
+
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+nav ul li{
+  display: flex;
+}
+nav ul li a{
+  text-decoration: none;
+}
+
+.hire-me{
+  display: flex;
+  flex: 1;
+}
+
+
 
 div.header-container,.about-me-container,.skills-container,.contact-container{
     background-color: #090042;
