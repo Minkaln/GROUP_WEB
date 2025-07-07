@@ -15,6 +15,15 @@ body{
   z-index: 1;
 }
 
+.Logo-Header{
+  display: flex;
+  padding-left: 2rem;
+  font-family: "Righteous", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
 .home-container{
   display: flex;
   padding-top: 90px;
@@ -71,7 +80,13 @@ ul{
 nav ul{
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 16px;
 }
 
 nav ul li{
@@ -86,6 +101,27 @@ nav ul li a{
   flex: 1;
 }
 
+.hire-me button{
+  background-color: white;
+  border: none;
+  border-radius: 50px;
+  width: 150px;
+  height: 40px;
+  margin: 20px;
+  padding: 0px;
+  cursor: pointer;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "wdth" 300;
+  font-size: 16px;
+}
+
+.hire-me button:hover{
+  background-color: rgb(255, 255, 255,80%);
+}
 
 
 div.header-container,.about-me-container,.skills-container,.contact-container{
