@@ -5,6 +5,7 @@
 body{
   margin: 0px;
   background-color: #2A0042;
+  background-image: url(./IMAGE/background/topography.svg);
 }
 .header-container{
   display: flex;
@@ -35,14 +36,69 @@ body{
 
 .about-me-container{
   display: flex;
+  flex-direction: row;
   width: 100vw;
   height: 800px;
+  align-items: center;
+}
+
+.about-me-image{
+  display: flex;
+  /* background-color: red; */
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-me-image img{
+  height: 420px;
+  border-radius: 100px;
+  background-color: #2A0042;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.about-me-info{
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  flex: 1.2;
+  margin-top: -100px;
+  /* background-color: blue; */
+  justify-content: center;
+  align-items: center;
+}
+
+.about-me-info h2{
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 52px;
+  text-decoration: underline solid;
+  margin-bottom: 20px;
+}
+
+.about-me-info p{
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .portfolio-container{
   display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 800px;
+  padding: 100px;
+  background-color: #2A0042;
+  text-align: center;
+  align-items: center;
 }
 
 .skills-container{
@@ -50,20 +106,24 @@ body{
   flex-direction: column;
   width: 100vw;
   height: 800px;
+  justify-items: center;
+  align-items: center;
 }
 .title{
-  font-size: 40px;
-  font-weight: semibold;
-  left: 50%;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 38px;
   position: absolute;
-  font-weight: 600;
   width: 167px;
   height: 48px;
-  margin: 0 auto 7px;
+  margin-bottom: 10px;
   position: relative;
   left: auto;
 }   
-.skills{
+.title p2{
   color: orangered;
 }
 .underline{
@@ -80,7 +140,6 @@ body{
   width: 1138px;
   height: 31px;
   margin-top: 50px;
-  margin-left: 25%;
 }
 
 .skill-name {
@@ -115,12 +174,18 @@ body{
 
 .service-container{
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100vw;
   height: 800px;
 }
 
 .contact-container{
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 70px;
   width: 100vw;
   height: 800px;
 }
@@ -195,11 +260,11 @@ div.header-container,.about-me-container,.skills-container,.contact-container{
 .home-info{
   display: flex;
   flex-direction: column;
-  background-color: black;
   padding-top: 10rem;
   padding-left: 4rem;
   flex: 1;
 }
+
 
 .home-info h1{
   font-family: "Righteous", sans-serif;
@@ -227,8 +292,171 @@ div.header-container,.about-me-container,.skills-container,.contact-container{
 }
 
 .home-image{
-  background-color: chartreuse;
+  display: flex;
+  flex: auto;
   flex: 1;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  /* background-color: red; */
+  padding-bottom: 130px;
+  padding-left: 20px;
+}
+
+.home-image img{
+  height: 420px;
+  border-radius: 100px;
+  background-color: #2A0042;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  filter: brightness(1.4);
+}
+
+.contact-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-info p{
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "wdth" 300;
+  font-size: 16px;
+}
+.contact-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 380px;
+  width: 657px;
+}
+.contact-form div{
+  display: flex;
+  flex-direction: row;
+}
+.contact-form div input{
+  display: flex;
+  flex-grow: 1;
+}
+.c1 {
+  background-color: #2A0042;
+  border: none;
+  border-radius: 10px;
+  cursor: text;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "wdth" 300;
+  font-size: 16px;
+  justify-content: center;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  padding: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  border: none;
+  outline: none;
+}
+.contact-form button{
+  align-self: center;
+  cursor: pointer;
+  width: 200px;
+  height: 40px;
+}
+
+.service-container h2{
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 52px;
+  text-decoration: underline solid;
+  margin-bottom: 20px;
+}
+.service-container h2 span{
+  color: orangered;
+}
+
+.services {
+  background-color: #2A0042;
+  text-align: center;
+}
+
+.service-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card {
+  background-color: white;
+  color: black;
+  width: 367px;
+  height: 399px;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h4{
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  color: #2A0042;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  justify-content: center;
+
+}
+
+.card p{
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "wdth" 300;
+  font-size: 16px;
+}
+
+.portfolio-container h2{
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 52px;
+  text-decoration: underline solid;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.portfolio-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ff9900;
+  cursor: pointer;
 }
 
 footer{
