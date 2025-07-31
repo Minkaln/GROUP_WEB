@@ -77,17 +77,17 @@
     <div class="portfolio-container" id="portfolio">
         <h2>Portfolio</h2>
       <div class="portfolio-grid">
-        <img src="photo_2025-07-16_12-55-22.jpg" alt="Project 1">
-        <img src="photo_2025-07-16_12-55-22 (3).jpg" alt="Project 2">
-        <img src="photo_2025-07-16_12-55-22 (4).jpg" alt="Project 3">
-        <img src="photo_2025-07-16_12-55-22 (5).jpg" alt="Project 4">
-        <img src="photo_2025-07-16_12-55-22 (2).jpg" alt="Project 5">
-        <img src="mikhail-fesenko-aVEaY6hWlCo-unsplash.jpg" alt="Project 6">
+        <img src="IMAGE\photo_2025-07-16_12-55-22.jpg" alt="Project 1">
+        <img src="IMAGE\photo_2025-07-16_12-55-22 (3).jpg" alt="Project 2">
+        <img src="IMAGE\photo_2025-07-16_12-55-22 (4).jpg" alt="Project 3">
+        <img src="IMAGE\photo_2025-07-16_12-55-22 (5).jpg" alt="Project 4">
+        <img src="IMAGE\photo_2025-07-16_12-55-22 (2).jpg" alt="Project 5">
+        <img src="IMAGE\mikhail-fesenko-aVEaY6hWlCo-unsplash.jpg" alt="Project 6">
       </div>
     </div>
     <div class="skills-container" id="skills">
             <p class="title">
-              Our <p2>Skills thing</p2>
+              Our <p2> Skills</p2>
             </p>
             <div class = "underline"></div>
       <div class="skill-container">
@@ -177,9 +177,128 @@
       </form>
     </div>
   </section>
-  <footer>
-    
-  </footer>
+
+  <!-- ✅ Contact Form Validation & Success Message -->
+  <script>
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const inputs = document.querySelectorAll('.contact-form .c1');
+      let valid = true;
+
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          input.style.border = '2px solid red';
+          valid = false;
+        } else {
+          input.style.border = '1px solid #ccc';
+        }
+      });
+
+      if (valid) {
+        alert("Message sent successfully!");
+        this.reset();
+      }
+    });
+  </script>
+
+  <!-- 🖼️ Modal Viewer for Portfolio Images -->
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+  </style>
+  <div class="modal" id="imageModal">
+    <img id="modalImage" src="">
+  </div>
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    document.querySelectorAll('.portfolio-grid img').forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+      });
+    });
+    modal.addEventListener('click', () => {
+      modal.style.display = "none";
+    });
+  </script>
+
+  <!-- 📌 ScrollSpy Navigation Highlighting -->
+  <script>
+    const sections = document.querySelectorAll("section > div[id]");
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) current = section.getAttribute("id");
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active-link");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active-link");
+        }
+      });
+    });
+  </script>
+  <style>
+    .active-link {
+      color: orange;
+      text-decoration: underline;
+    }
+    /* Navigation Links Hover Animation */
+    nav ul li a {
+      transition: transform 0.3s ease, color 0.3s ease;
+      display: inline-block;
+    }
+
+    nav ul li a:hover {
+      transform: translateY(-3px) scale(1.05);
+      color: #FFA500; /* Optional highlight */
+    }
+
+    /* Hire Us Button Hover Animation */
+    nav.hire-me button {
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    nav.hire-me button:hover {
+      transform: scale(1.08);
+      background-color: #f5f5f5;
+      cursor: pointer;
+    }
+  </style>
+
+  <!-- 📊 Animated Skill Bars using IntersectionObserver -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelector('.progress').style.width = entry.target.dataset.percent;
+        }
+      });
+    }, { threshold: 0.6 });
+
+    document.querySelectorAll('.skill-container').forEach(bar => {
+      const percent = bar.querySelector('.skill-percent').textContent;
+      bar.dataset.percent = percent;
+      observer.observe(bar);
+    });
+  </script>
+
 
 </body>
 </html>
