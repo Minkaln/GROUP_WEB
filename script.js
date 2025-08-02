@@ -1,7 +1,5 @@
-
 document.querySelector('.contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const inputs = document.querySelectorAll('.contact-form .c1');
+  const inputs = document.querySelectorAll('.contact-form .c1:not(button)');
   let valid = true;
 
   inputs.forEach(input => {
@@ -13,7 +11,9 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
     }
   });
 
-  if (valid) {
+  if (!valid) {
+    e.preventDefault();
+  } else {
     alert("Message sent successfully!");
     this.reset();
   }
@@ -62,5 +62,25 @@ document.querySelectorAll('.skill-container').forEach(bar => {
   const percent = bar.querySelector('.skill-percent').textContent;
   bar.dataset.percent = percent;
   observer.observe(bar);
-})
-;
+});
+
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+const modeIcon = document.querySelector('.mode-icon');
+
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+        modeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        modeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme && savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+    modeIcon.textContent = '☀️';
+}
